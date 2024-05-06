@@ -1,0 +1,4 @@
+
+ng new prueba-angular --no-standalone     
+
+ng g c shared/home
