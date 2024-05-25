@@ -159,11 +159,3 @@ body {
     }
 }
 
-
-/* Estilos para centrar la imagen debajo del texto */
-.image_logo {
-    display: flex;
-    justify-content: center; /* Centra la imagen horizontalmente */
-    margin-top: 20px; /* Añade margen superior para separar la imagen del texto */
-}
-
