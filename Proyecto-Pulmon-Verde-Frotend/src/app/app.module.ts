@@ -10,6 +10,7 @@ import { HomeComponent } from './shared/home/home.component';
 import { BlogComponent } from './shared/blog/blog.component';
 import { ContactoComponent } from './shared/contacto/contacto.component';
 import { QuienesSomosComponent } from './shared/quienes-somos/quienes-somos.component';
+import { RegisterComponent } from './shared/register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { QuienesSomosComponent } from './shared/quienes-somos/quienes-somos.comp
     HomeComponent,
     BlogComponent,
     ContactoComponent,
-    QuienesSomosComponent
+    QuienesSomosComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

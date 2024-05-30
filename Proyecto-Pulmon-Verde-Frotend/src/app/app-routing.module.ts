@@ -5,6 +5,7 @@ import { LoginComponent } from './shared/login/login.component';
 import { BlogComponent } from './shared/blog/blog.component';
 import { ContactoComponent } from './shared/contacto/contacto.component';
 import { QuienesSomosComponent } from './shared/quienes-somos/quienes-somos.component';
+import { RegisterComponent } from './shared/register/register.component';
 
 
 const routes: Routes = [{path:'',redirectTo: 'home',  pathMatch: 'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [{path:'',redirectTo: 'home',  pathMatch: 'full'},
   {path:'blog',component:BlogComponent},
   {path:'contacto',component:ContactoComponent},
   {path:'QuienesSomos',component:QuienesSomosComponent},
+  {path:'Register',component:RegisterComponent}
 ];
 
 @NgModule({
