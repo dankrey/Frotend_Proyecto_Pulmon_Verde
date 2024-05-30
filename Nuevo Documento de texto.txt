@@ -1,4 +1,14 @@
 
 ng new prueba-angular --no-standalone     
 
-ng g c shared/home
+ng g c shared/ho 
+
+
+ng g service Conectar-API
+
+
+ng g c conectar-api
+
+ng serve --port 3002
+
+
