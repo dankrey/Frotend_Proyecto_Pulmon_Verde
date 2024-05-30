@@ -3,7 +3,7 @@ body {
     font-family: 'Overpass', sans-serif;
     font-weight: normal;
     font-size: 100%;
-    color: rgb(53, 173, 20));
+    color:( rgb(53, 173, 20));
     
     margin: 0;
     background-color: #5f6769;
@@ -124,14 +124,13 @@ body {
     -moz-border-radius: 3px 3px 3px 3px;
     -webkit-border-radius: 3px 3px 3px 3px;
     
-    background-color: rgb(34, 214, 46), 87, 25);
+    background-color: (rgb(34, 214, 46), 87, 25);
     
-    margin-top: 10px;
-}
+    margin-top: 10px;}
 
 #login button:hover {
     background-color: #3c4245;
-    color:rgba(4, 234, 19, 0.471), 71, 0);
+    color:(rgba(4, 234, 19, 0.471), 71, 0);
 }
 /* formulario de login */
 /* formulario de login */

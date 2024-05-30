@@ -424,7 +424,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     -o-animation-duration: 22s;
     -ms-animation-duration: 22s;
     animation-duration: 22s;
-    background-color: rgba(20, 158, 105, 0.25)5)
+    background-color: (rgba(20, 158, 105, 0.25)5)
   }
   
   .colorlib-bubbles li:nth-child(5) {
