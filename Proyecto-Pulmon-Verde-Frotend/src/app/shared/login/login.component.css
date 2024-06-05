@@ -90,7 +90,7 @@ body {
 #login input {
     font-family: 'Overpass', sans-serif;
     font-size: 110%;
-    color: #ffffff;
+    color: #000000;
     
     display: block;
     width: 100%;
@@ -229,3 +229,4 @@ hr {
 }
 /* ajustar a pantallas con ancho menor o igual a 775px; */
 /* ajustar a pantallas con ancho menor o igual a 775px; */
+
