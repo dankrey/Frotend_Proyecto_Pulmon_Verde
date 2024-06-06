@@ -12,7 +12,8 @@ import { ContactoComponent } from './shared/contacto/contacto.component';
 import { QuienesSomosComponent } from './shared/quienes-somos/quienes-somos.component';
 import { RegisterComponent } from './shared/register/register.component';
 import { MapaComponent } from './shared/mapa/mapa.component';
-import { ReactiveFormsModule} from '@angular/forms'
+import { ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { ReactiveFormsModule} from '@angular/forms'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()

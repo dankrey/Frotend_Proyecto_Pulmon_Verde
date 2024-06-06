@@ -4,6 +4,9 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ElementRef, ViewChild, Renderer2 } from '@angular/core';
 
+declare var google: any; // Declarar 'google' para evitar errores de TypeScript
+
+
 @Component({
   selector: 'app-mapa',
   templateUrl: './mapa.component.html',
@@ -38,12 +41,26 @@ export class MapaComponent implements OnInit, AfterViewInit {
   ngOnInit(): void { }
 
   ngAfterViewInit(): void {
-    const cundinamarcaCoords = { lat: 4.867, lng: -74.05 }; // Coordenadas aproximadas de Cundinamarca
-    this.cargarMapa(cundinamarcaCoords);
-    this.cargarAutocomplete();
-    this.cargarAutocompleteCiudades(this.inputCiudad.nativeElement, 'locality');
-    this.cargarAutocompleteCiudades(this.inputProvincia.nativeElement, 'administrative_area_level_2');
-    this.cargarAutocompleteCiudades(this.inputRegion.nativeElement, 'administrative_area_level_1');
+    this.loadGoogleMapsScript(() => {
+      const cundinamarcaCoords = { lat: 4.867, lng: -74.05 }; // Coordenadas aproximadas de Cundinamarca
+      this.cargarMapa(cundinamarcaCoords);
+      this.cargarAutocomplete();
+      this.cargarAutocompleteCiudades(this.inputCiudad.nativeElement, 'locality');
+      this.cargarAutocompleteCiudades(this.inputProvincia.nativeElement, 'administrative_area_level_2');
+      this.cargarAutocompleteCiudades(this.inputRegion.nativeElement, 'administrative_area_level_1');
+    });
+  }
+
+  loadGoogleMapsScript(callback: () => void) {
+    if (typeof document !== 'undefined') {
+      const script = document.createElement('script');
+      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDTCCpzjRTfFRh-5VVW1La3I-lH-J-7qYU
+&libraries=places,directions&callback=initializeMap`;
+      script.async = true;
+      script.defer = true;
+      script.onload = callback;
+      document.body.appendChild(script);
+    }
   }
 
   onSubmit() {
@@ -127,22 +144,22 @@ export class MapaComponent implements OnInit, AfterViewInit {
 
   cargarMapa(coords: any): void {
     const opciones = {
-      center: new google.maps.LatLng(coords.lat, coords.lng),
+      center: new google.maps.LatLng(4.6031, -74.2144), // Coordenadas del Bosque de Cundinamarca
       zoom: 17,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-
+  
     this.mapa = new google.maps.Map(this.renderer.selectRootElement(this.divMap.nativeElement), opciones);
-
+  
     const markerPosition
     = new google.maps.Marker({
       position: this.mapa.getCenter(),
       title: "Ubicación inicial",
     });
-
+  
     markerPosition.setMap(this.mapa);
     this.markers.push(markerPosition);
-
+  
     google.maps.event.addListener(this.mapa, 'click', (evento: google.maps.MapMouseEvent) => {
       const marker = new google.maps.Marker({
         position: evento.latLng,
@@ -150,18 +167,19 @@ export class MapaComponent implements OnInit, AfterViewInit {
       });
       marker.setDraggable(true);
       marker.setMap(this.mapa);
-
-      google.maps.event.addListener(marker, 'click', (event) => {
+  
+      google.maps.event.addListener(marker, 'click', (event: google.maps.MouseEvent) => {
         marker.setMap(null);
       });
     });
   }
+  
 
   buscarDireccion() {
     const direccion = this.formMapas.value.direccion + ', ' + this.formMapas.value.ciudad + ', ' + this.formMapas.value.provincia + ', ' + this.formMapas.value.region;
     const geocoder = new google.maps.Geocoder();
 
-    geocoder.geocode({ address: direccion }, (results, status) => {
+    geocoder.geocode({ address: direccion }, (results: google.maps.GeocoderResult[], status: google.maps.GeocoderStatus) => {
       if (status === 'OK' && results[0]) {
         this.mapa.setCenter(results[0].geometry.location);
         const marker = new google.maps.Marker({
@@ -173,5 +191,7 @@ export class MapaComponent implements OnInit, AfterViewInit {
         console.error('Geocode was not successful for the following reason: ' + status);
       }
     });
+    
   }
+
 }
