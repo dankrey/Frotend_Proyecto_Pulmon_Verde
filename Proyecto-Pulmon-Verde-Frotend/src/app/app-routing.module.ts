@@ -15,7 +15,7 @@ const routes: Routes = [{path:'',redirectTo: 'home',  pathMatch: 'full'},
   {path:'blog',component:BlogComponent},
   {path:'contacto',component:ContactoComponent},
   {path:'QuienesSomos',component:QuienesSomosComponent},
-  {path:'Register',component:RegisterComponent},
+  {path:'register',component:RegisterComponent},
   {path:'Mapa',component:MapaComponent},
 ];
 

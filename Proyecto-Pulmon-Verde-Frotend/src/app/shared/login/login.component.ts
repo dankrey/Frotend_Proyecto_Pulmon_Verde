@@ -1,27 +1,37 @@
 import { Component } from '@angular/core';
-import { AuthService } from './auth.service';
+import { AuthService } from '../../servicios/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   username: string = '';
   password: string = '';
-  loginError: boolean = false;
+  loginError: string = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
-  onSubmit() {
-    if (this.authService.authenticate(this.username, this.password)) {
-      // Iniciar sesión exitosamente
-      this.loginError = false;
-      // Navegar a la página de bienvenida
-      // Ejemplo: this.router.navigate(['/bienvenida']);
-    } else {
-      // Mostrar error de inicio de sesión
-      this.loginError = true;
-    }
+  login() {
+    this.authService
+      .login({ username: this.username, password: this.password })
+      .subscribe(
+        (response) => {
+          console.log('Login successful', response);
+          // Redirigir al usuario al componente QuienesSomos
+          this.router.navigate(['/home']);
+        },
+        (error) => {
+          console.error('Login failed', error);
+          // Manejar el error de manera más específica aquí
+          if (error.status === 401) {
+            this.loginError = 'Invalid username or password';
+          } else {
+            this.loginError = 'An unknown error occurred. Please try again later.';
+          }
+        }
+      );
   }
 }

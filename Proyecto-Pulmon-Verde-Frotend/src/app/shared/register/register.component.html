@@ -1,58 +1,59 @@
-<<!DOCTYPE html>
-<html>
-<head>
-<title>Registrate a Pulmon Verde</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- Custom Theme files -->
-<link href="register.component.css" rel="stylesheet" type="text/css" media="all" />
-<!-- //Custom Theme files -->
-<!-- web font -->
-<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
-<!-- //web font -->
-</head>
-<body>
-	<!-- main -->
-	<div class="main-w3layouts wrapper">
-		<h1>Registrate Pulmon Verde</h1>
-		<div class="main-agileinfo">
-			<div class="agileits-top">
-				<form action="#" method="post">
-					<input class="text" type="text" name="Username" placeholder="Nombre Completo" required="">
-					<input class="text email" type="email" name="email" placeholder="Correo Electronico" required="">
-					<input class="text" type="password" name="password" placeholder="Contaseña" required="">
-					<input class="text w3lpass" type="password" name="phone" placeholder="Numero de Telefono" required="">
-					<div class="wthree-text">
-						<label class="anim">
-							<input type="checkbox" class="checkbox" required="">
-							<span> Acepto los términos y condiciones</span>
-						</label>
-						<div class="clear"> </div>
-					</div>
-					<input type="submit" value="Registrarse">
-				</form>
-				<p>¿No tienes una cuenta? <a href="./login"> ¡Inicia sesión ahora!</a></p>
-			</div>
-		</div>
-		<!-- copyright -->
-		<div class="colorlibcopy-agile">
-			<p>© 2024 Pulmon Verde.Reservados todos los derechos| Autor <a href="./home" target="_blank">Pulmon Verde</a></p>
-		</div>
-		<!-- //copyright -->
-		<ul class="colorlib-bubbles">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
-	</div>
-	<!-- //main -->
-</body>
-</html>
+<div class="Fondo">
+    <!-- main -->
+    <div class="main-w3layouts wrapper">
+        <h1>Regístrate Pulmon Verde</h1>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <div>
+                    <form (ngSubmit)="register()">
+                        <div class="form-group">
+                            <label for="username" class="ColorTexto">Username:</label>
+                            <input type="text" id="username" [(ngModel)]="username" name="username"
+                                class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="ColorTexto">Password:</label>
+                            <input type="password" id="password" [(ngModel)]="password" name="password"
+                                class="form-control">
+                        </div>
+<br>
+                        <!-- Botón registrar centrado -->
+                        <div class="text-center">
+                            <button type="submit" class=" c-button c-button--gooey">
+                                Register
+                                <div class="c-button__blobs">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Fin del Botón Registrar -->
+
+                    </form>
+                </div>
+
+                <p>¿No tienes una cuenta? <a href="./login"> ¡Inicia sesión ahora!</a></p>
+            </div>
+        </div>
+        <!-- copyright -->
+        <div class="colorlibcopy-agile ColorTexto">
+            <p>© 2024 Pulmon Verde. Reservados todos los derechos | Autor <a href="./home" target="_blank">Pulmon
+                    Verde</a></p>
+        </div>
+        <!-- //copyright -->
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- //main -->
+</div>

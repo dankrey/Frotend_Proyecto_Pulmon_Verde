@@ -13,7 +13,7 @@ import { QuienesSomosComponent } from './shared/quienes-somos/quienes-somos.comp
 import { RegisterComponent } from './shared/register/register.component';
 import { MapaComponent } from './shared/mapa/mapa.component';
 import { ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,provideHttpClient, withFetch} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent]
 })
