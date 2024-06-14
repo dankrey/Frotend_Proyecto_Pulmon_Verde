@@ -2,3 +2,9 @@
 ng new prueba-angular --no-standalone     
 
 ng g c shared/home
+
+clave api del  mapa google: AIzaSyDTCCpzjRTfFRh-5VVW1La3I-lH-J-7qYU
+
+
+clases de mapa  y libreria de google maps
+npm i @types/googlemaps
