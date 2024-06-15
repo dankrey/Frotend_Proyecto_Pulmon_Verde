@@ -1,7 +1,34 @@
+ 
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+     <meta charset="UTF-8">
+     <meta name="description" content="">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+ 
+     <!-- Title -->
+     <title>Blog Pulmon verde</title>
+ 
+     <!-- Favicon -->
+     <link rel="icon" href="../assets/img/core-img/Logo1.png">
+ 
+ 
+ </head>
+ 
+ 
+ 
+ 
+ <body>
+ 
+ 
  <!-- ##### Preloader ##### -->
- <div id="preloader">
+<!-- <div id="preloader">
     <i class="circle-preloader"></i>
-</div> 
+</div>  -->
 
 
 <!-- ##### Header Area Start ##### -->
@@ -462,41 +489,101 @@
 
 <!-- ##### Top Popular Courses 2 Area Start ##### -->
 <div class="top-popular-courses-area section-padding-100-70">
-    <div class="container">
-      <div class="row">
+<div class="container">
+    <div class="row">
         <div class="col-12">
-          <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
-            <span>Últimos</span>
-            <h3>Blogs</h3>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <!-- Iteración sobre cada artículo -->
-        <div class="col-12 col-lg-6" *ngFor="let article of articles">
-          <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="400ms">
-            <div class="popular-course-content">
-              <h5>{{ article.title }}</h5>
-              <span>By {{ article.author }} | {{ article.publishDate | date }}</span>
-              <!-- Aquí puedes considerar usar estrellas dinámicas según una propiedad de calificación del artículo si es aplicable -->
-              <div class="course-ratings">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-o" aria-hidden="true"></i>
-              </div>
-              <p>{{ article.content }}</p>
-              <a href="#" class="btn academy-btn btn-sm">Leer más</a>
+            <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
+                <span>Últimos</span>
+                <h3>Blogs</h3>
             </div>
-            <div class="popular-course-thumb bg-img" [style.backgroundImage]="'url(' + article.urlImage + ')'" style="background-size: cover;"></div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  <!-- ##### Top Popular Courses 2 Area End ##### -->
-  
+    <div class="row">
+       
+        <!-- Single Top Popular Course -->
+        <div class="col-12 col-lg-6">
+            <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="400ms">
+                <div class="popular-course-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                    <span>By Simon Smith   |  March 18, 2018</span>
+                    <div class="course-ratings">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                    <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod.</p>
+                    <a href="#" class="btn academy-btn btn-sm">Leer más</a>
+                </div>
+                <div class="popular-course-thumb bg-img" style="background-image: url(assets/img/bg-img/pc-1.jpg);"></div>
+            </div>
+        </div>
+        
+        <!-- Single Top Popular Course -->
+        <div class="col-12 col-lg-6">
+            <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="500ms">
+                <div class="popular-course-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                    <span>By Simon Smith   |  March 18, 2018</span>
+                    <div class="course-ratings">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                    <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod.</p>
+                    <a href="#" class="btn academy-btn btn-sm">Leer más</a>
+                </div>
+                <div class="popular-course-thumb bg-img" style="background-image: url(assets/img/bg-img/pc-2.jpg);"></div>
+            </div>
+        </div>
+        
+        <!-- Single Top Popular Course -->
+        <div class="col-12 col-lg-6">
+            <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="600ms">
+                <div class="popular-course-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                    <span>By Simon Smith   |  March 18, 2018</span>
+                    <div class="course-ratings">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                    <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod.</p>
+                    <a href="#" class="btn academy-btn btn-sm">Leer más</a>
+                </div>
+                <div class="popular-course-thumb bg-img" style="background-image: url(assets/img/bg-img/pc-3.jpg);"></div>
+            </div>
+        </div>
+        
+        <!-- Single Top Popular Course -->
+        <div class="col-12 col-lg-6">
+            <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="700ms">
+                <div class="popular-course-content">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                    <span>By Simon Smith   |  March 18, 2018</span>
+                    <div class="course-ratings">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                    <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod.</p>
+                    <a href="#" class="btn academy-btn btn-sm">Leer más</a>
+                </div>
+                <div class="popular-course-thumb bg-img" style="background-image: url(assets/img/bg-img/pc-4.jpg);"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- ##### Top Popular Courses 2 Area End ##### -->
+
 
 
 
@@ -626,3 +713,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Pulm�
 </footer>
 <!-- ##### Footer Area Start ##### -->
  
+
+ <!-- ##### All Javascript Script ##### -->
+  <!-- jQuery-2.2.4 js -->
+  <script src="assets/js/jquery/jquery-2.2.4.min.js"></script>
+  <!-- Popper js -->
+  <script src="assets/js/bootstrap/popper.min.js"></script>
+  <!-- Bootstrap js -->
+  <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+  <!-- All Plugins js -->
+  <script src="assets/js/plugins/plugins.js"></script>
+  <!-- Active js -->
+  <script src="assets/js/active.js"></script>
+  
+</body>
+</html>

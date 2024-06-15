@@ -1,7 +1,9 @@
 /* [Master Stylesheet v1.0] */
 /* :: :: 1.0 Import Fonts */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900");
-/* :: 2.0 Import All CSS */
+/* @import url('../../../../node_modules/bootstrap/dist/css/bootstrap.min.css'); */
+
+
 @import url(../../../assets/css/bootstrap.min.css); 
 @import url(../../../assets/css/owl.carousel.min.css);    
 @import url(../../../assets/css/animate.css);
@@ -9,6 +11,14 @@
 @import url(../../../assets/css/font-awesome.min.css);
 @import url(../../../assets/css/custom-icon.css);
 @import url(../../../assets/css/classy-nav.min.css);
+/* @import url(css/owl.carousel.min.css); */
+/* :: 2.0 Import All CSS */
+/* @import url(css/bootstrap.min.css);
+@import url(css/owl.carousel.min.css);
+
+
+
+
 /* :: 3.0 Base CSS */
 * {
   margin: 0;
@@ -1291,170 +1301,4 @@ img {
 /*# sourceMappingURL=style.css.map */
 
 
-.informacion{
-    display: flex;
-    justify-content: space-between;
-}
 
-.texto-informacion {
-    margin: 5%;
-    margin-left: 10%;
-    width: 40%;
-}
-
-.img-informacion {
-   margin: 5%;
-   margin-right: 10%;
-   width: 50%;   
-} 
-
-#img-inicio{
- border-radius: 25px;
-}
-
-#titulo{
-    color:  hsl(136, 75%, 45%);
-}
-
-#button-mas{
-    width: 150px;
-    height: 35px;
-    border-radius: 50px;
-    background-color: hsl(136, 75%, 45%);
-    border-style: none;
-    color: azure;
-}
-
-.titulo-comunicados, .titulo-blogs{
-    text-align: center;
-}
-.comunicados, .blogs{
-    display: flex;
-    justify-content: space-between;
-}
-
-#img-comunicados{
-    width: 50%;
-    height: 50%;
-}
-
-.comunicado-uno, .comunicado-dos, .comunicado-tres{
-    margin: 5%;
-}
-
-.blog-uno, .blog-dos, .blog-tres{
-    margin: 5%;
-}
-
-#button-comunicados, #button-blogs{
-    width: 90px;
-    height: 35px;
-    border-radius: 10px;
-    color: hsl(136, 75%, 45%);
-    border-color: hsl(136, 75%, 45%);
-    border-style: double;
-}
-
-.img-fluid {
- width: 80%; 
- height: 70%;
-}
-
-.acciones{
-    text-align: center;
-}
-
-.participacion{
-    display: flex;
-    justify-content: space-between;
-}
-
-.texto-participacion {
-    margin: 5%;
-    margin-left: 10%;
-    width: 40%;
-}
-
-.img-participacion {
-   margin: 5%;
-   margin-right: 10%;
-   width: 50%;   
-} 
-
-#button-participación{
-    width: 90px;
-    height: 35px;
-    border-radius: 10px;
-    color: black;
-    background-color: yellow;
-    border-style: none;
-}
-
-
-.blogs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Separación entre los artículos */
-}
-
-.blog-item {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 15px;
-  width: calc(33.333% - 20px); /* Para tener 3 artículos por fila con un gap de 20px */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.blog-item:hover {
-  transform: translateY(-5px);
-}
-
-.img-comunicados img {
-  max-width: 100%;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-h5 {
-  font-size: 18px;
-  margin: 10px 0;
-}
-
-span {
-  font-size: 14px;
-  color: #777;
-  margin-bottom: 10px;
-  display: block;
-}
-
-.article-content {
-  font-size: 16px;
-  margin-bottom: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 4; /* Mostrar hasta 4 líneas de texto */
-  -webkit-box-orient: vertical;
-}
-
-#button-comunicados {
-  background-color: #1bb84a;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#button-comunicados:hover {
-  background-color: #50d657;
-}
-.article-image {
-  width: 100%; /* Ajusta el ancho al 100% del contenedor */
-  height: auto; /* La altura se ajusta automáticamente manteniendo la proporción */
-  max-width: 300px; /* Opcional: limita el ancho máximo para evitar imágenes muy grandes */
-  object-fit: cover; /* Ajusta la imagen manteniendo la relación de aspecto */
-}

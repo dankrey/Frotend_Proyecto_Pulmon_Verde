@@ -14,6 +14,8 @@ import { RegisterComponent } from './shared/register/register.component';
 import { MapaComponent } from './shared/mapa/mapa.component';
 import { ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule,provideHttpClient, withFetch} from '@angular/common/http';
+import { HomeUsuarioComponent } from './shared/home-usuario/home-usuario.component';
+import { BlogusuarioComponent } from './components/blogusuario/blogusuario.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,9 @@ import { HttpClientModule,provideHttpClient, withFetch} from '@angular/common/ht
     ContactoComponent,
     QuienesSomosComponent,
     RegisterComponent,
-    MapaComponent
+    MapaComponent,
+    HomeUsuarioComponent,
+    BlogusuarioComponent
   ],
   imports: [
     BrowserModule,

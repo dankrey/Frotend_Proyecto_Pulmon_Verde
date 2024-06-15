@@ -1,0 +1,71 @@
+<!-- blog.component.html -->
+<div>
+  <!-- Botón de regreso a home -->
+  <a href="/home" class="btn btn-primary">Atrás</a>
+</div>
+
+<div class="container">
+  <h2>Add Article</h2>
+  <form (ngSubmit)="addArticle()" *ngIf="!editingArticle">
+    <div class="form-group">
+      <label>Title:</label>
+      <input type="text" class="form-control" name="title" [(ngModel)]="newArticle.title" required>
+    </div>
+    <div class="form-group">
+      <label>Author:</label>
+      <input type="text" class="form-control" name="author" [(ngModel)]="newArticle.author" required>
+    </div>
+    <div class="form-group">
+      <label>Content:</label>
+      <textarea class="form-control" name="content" [(ngModel)]="newArticle.content" required></textarea>
+    </div>
+    <div class="form-group">
+      <label>Image URL:</label>
+      <input type="text" class="form-control" name="urlImage" [(ngModel)]="newArticle.urlImage">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Add Article</button>
+  </form>
+
+  <form (ngSubmit)="updateArticle()" *ngIf="editingArticle">
+    <h2>Edit Article</h2>
+    <div class="form-group">
+      <label>Title:</label>
+      <input type="text" class="form-control" name="title" [(ngModel)]="editingArticle.title" required>
+    </div>
+    <div class="form-group">
+      <label>Author:</label>
+      <input type="text" class="form-control" name="author" [(ngModel)]="editingArticle.author" required>
+    </div>
+    <div class="form-group">
+      <label>Content:</label>
+      <textarea class="form-control" name="content" [(ngModel)]="editingArticle.content" required></textarea>
+    </div>
+    <div class="form-group">
+      <label>Image URL:</label>
+      <input type="text" class="form-control" name="urlImage" [(ngModel)]="editingArticle.urlImage">
+    </div>
+    <div class="form-group">
+      <label>Publish Date:</label>
+      <input type="date" class="form-control" name="publishDate" [(ngModel)]="editingArticle.publishDate" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Article</button>
+    <button type="button" class="btn btn-secondary" (click)="cancelEditing()">Cancel</button>
+  </form>
+
+  <hr>
+
+  <h2>Articles</h2>
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let article of articles">
+      <h4>{{ article.title }}</h4>
+      <p>Author: {{ article.author }}</p>
+      <p>{{ article.content }}</p>
+      <p>Publish Date: {{ article.publishDate }}</p>
+      <img *ngIf="article.urlImage" [src]="article.urlImage" class="img-fluid" alt="Article Image">
+      <button class="btn btn-danger" (click)="deleteArticle(article.id)">Delete</button>
+      <button class="btn btn-secondary" (click)="startEditing(article)">Edit</button>
+    </li>
+  </ul>
+</div>

@@ -7,6 +7,9 @@ import { ContactoComponent } from './shared/contacto/contacto.component';
 import { QuienesSomosComponent } from './shared/quienes-somos/quienes-somos.component';
 import { RegisterComponent } from './shared/register/register.component';
 import { MapaComponent } from './shared/mapa/mapa.component';
+import { HomeUsuarioComponent } from './shared/home-usuario/home-usuario.component';
+import { BlogusuarioComponent } from './components/blogusuario/blogusuario.component';
+
 
 
 const routes: Routes = [{path:'',redirectTo: 'home',  pathMatch: 'full'},
@@ -17,6 +20,10 @@ const routes: Routes = [{path:'',redirectTo: 'home',  pathMatch: 'full'},
   {path:'QuienesSomos',component:QuienesSomosComponent},
   {path:'register',component:RegisterComponent},
   {path:'Mapa',component:MapaComponent},
+  {path:'homeUsuario',component:HomeUsuarioComponent},
+  {path:'blogUsuario',component: BlogusuarioComponent},
+
+ 
 ];
 
 @NgModule({

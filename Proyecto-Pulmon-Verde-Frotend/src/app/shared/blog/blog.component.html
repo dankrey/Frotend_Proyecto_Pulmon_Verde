@@ -19,9 +19,9 @@
 
 <body>
     <!-- ##### Preloader ##### -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <i class="circle-preloader"></i>
-    </div>
+    </div> -->
 
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
@@ -178,41 +178,25 @@
         </div>
     </div>
 
-    <!-- Ultimos blog -->
-    <div class="titulo-blogs">
-        <h3>Ultimos blog</h3>
-    </div>
+   <!-- Ultimos blog -->
 
-    <div class="blogs">
-
-        <div class="blog-uno">
-            <div class="img-comunicados">
-                <img src="../assets/img/blog-img/2.jpg" alt="">
-            </div>
-            <h5>Esto es un comunicado</h5>
-            <span>By lucia caro | mayo 21, 2012</span>
-            <p>Crear conciencia sobre la deforestacion en el mundo</p>
-            <button id="button-comunicados">Leer más</button>
-        </div>
-        <div class="blog-dos">
-            <div class="img-comunicados">
-                <img src="../assets/img/blog-img/2.jpg" alt="">
-            </div>
-            <h5>Esto es un comunicado</h5>
-            <span>By lucia caro | mayo 21, 2012</span>
-            <p>Crear conciencia sobre la deforestacion en el mundo</p>
-            <button id="button-comunicados">Leer más</button>
-        </div>
-        <div class="blog-tres">
-            <div class="img-comunicados">
-                <img src="../assets/img/blog-img/2.jpg" alt="">
-            </div>
-            <h5>Esto es un comunicado</h5>
-            <span>By lucia caro | mayo 21, 2012</span>
-            <p>Crear conciencia sobre la deforestacion en el mundo</p>
-            <button id="button-blogs">Leer más</button>
-        </div>
+<div class="titulo-blogs">
+    <h3>Ultimos blog</h3>
+  </div>
+  
+  <div class="blogs">
+    <div *ngFor="let article of articles" class="blog-item">
+      <div class="img-comunicados">
+        <img [src]="article.urlImage" alt="Article Image" class="article-image">
+      </div>
+      <h5>{{ article.title }}</h5>
+      <span>By {{ article.author }} | {{ article.publishDate | date }}</span>
+      <p class="article-content">{{ article.content }}</p>
+      <button id="button-comunicados" [routerLink]="['/article', article.id]">Leer más</button>
     </div>
+  </div>
+  
+
 
         <!-- acciones -->
     <div class="acciones">

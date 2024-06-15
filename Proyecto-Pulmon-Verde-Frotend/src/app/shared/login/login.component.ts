@@ -21,7 +21,7 @@ export class LoginComponent {
         (response) => {
           console.log('Login successful', response);
           // Redirigir al usuario al componente QuienesSomos
-          this.router.navigate(['/home']);
+          this.router.navigate(['/blogUsuario']);
         },
         (error) => {
           console.error('Login failed', error);
