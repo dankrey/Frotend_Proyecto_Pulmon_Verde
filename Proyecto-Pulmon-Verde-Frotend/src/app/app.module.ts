@@ -16,6 +16,10 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule,provideHttpClient, withFetch} from '@angular/common/http';
 import { HomeUsuarioComponent } from './shared/home-usuario/home-usuario.component';
 import { BlogusuarioComponent } from './components/blogusuario/blogusuario.component';
+import { ComentariosComponent } from './servicios/ComentarioService/components/comentarios/comentarios.component';
+import { InformeComponetComponent } from './components/Informeserivicio/informe-componet/informe-componet.component';
+import { InformesComponent } from './shared/informes/informes.component'; 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +33,11 @@ import { BlogusuarioComponent } from './components/blogusuario/blogusuario.compo
     RegisterComponent,
     MapaComponent,
     HomeUsuarioComponent,
-    BlogusuarioComponent
+    BlogusuarioComponent,
+    ComentariosComponent,
+    InformeComponetComponent,
+    InformesComponent
+ 
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,58 @@
+<!-- informes.component.html -->
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Menú vertical -->
+    <div class="col-md-2">
+      <div class="vertical-menu">
+        <a href="/blogUsuario">Blog Usuario</a>
+        <a href="/comentarios">Comentarios</a>
+        <a href="/informes" class="active">Informes</a>
+        <a href="/home" class="btn btn-primary btn-back">Atrás</a>
+      </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="col-md-10">
+      <div class="container">
+        <h2>{{ isEditing ? 'Editar Informe' : 'Agregar Informe' }}</h2>
+        <form [formGroup]="informeForm" (ngSubmit)="submitForm()" class="inform-form">
+          <div class="form-group">
+            <label for="author">Autor</label>
+            <input id="author" type="text" formControlName="author" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="tittle">Título</label>
+            <input id="tittle" type="text" formControlName="tittle" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="description">Descripción</label>
+            <input id="description" type="text" formControlName="description" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="imageUrl">URL de Imagen</label>
+            <input id="imageUrl" type="text" formControlName="imageUrl" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary">{{ isEditing ? 'Actualizar' : 'Agregar' }}</button>
+          <button type="button" class="btn btn-secondary" *ngIf="isEditing" (click)="cancelEdit()">Cancelar</button>
+        </form>
+      
+        <h2>Lista de Informes</h2>
+        <ul class="inform-list">
+          <li *ngFor="let inform of informes" class="inform-item">
+            <div class="inform-card">
+              <h3>{{ inform.tittle }}</h3>
+              <p>{{ inform.description }}</p>
+              <p><img [src]="inform.imageUrl" alt="Imagen de Informe" style="max-width: 100px;"></p>
+              <p>Autor: {{ inform.author }}</p>
+              <div class="inform-buttons">
+                <button class="btn btn-primary" (click)="editInform(inform)">Editar</button>
+                <button class="btn btn-danger" (click)="inform.id !== undefined ? deleteInform(inform.id) : null">Eliminar</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

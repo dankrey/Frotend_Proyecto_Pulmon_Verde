@@ -1,71 +1,146 @@
 <!-- blog.component.html -->
-<div>
-  <!-- Botón de regreso a home -->
-  <a href="/home" class="btn btn-primary">Atrás</a>
-</div>
 
-<div class="container">
-  <h2>Add Article</h2>
-  <form (ngSubmit)="addArticle()" *ngIf="!editingArticle">
-    <div class="form-group">
-      <label>Title:</label>
-      <input type="text" class="form-control" name="title" [(ngModel)]="newArticle.title" required>
-    </div>
-    <div class="form-group">
-      <label>Author:</label>
-      <input type="text" class="form-control" name="author" [(ngModel)]="newArticle.author" required>
-    </div>
-    <div class="form-group">
-      <label>Content:</label>
-      <textarea class="form-control" name="content" [(ngModel)]="newArticle.content" required></textarea>
-    </div>
-    <div class="form-group">
-      <label>Image URL:</label>
-      <input type="text" class="form-control" name="urlImage" [(ngModel)]="newArticle.urlImage">
+<div class="container-fluid">
+  <div class="row">
+    <!-- Menú vertical -->
+    <div class="col-md-2">
+      <div class="vertical-menu">
+        <a href="/blogUsuario" class="active">Blog Usuario</a>
+        <a href="/comentarios">Comentarios</a>
+        <a href="/informes">Informes</a>
+        <!-- Botón de regreso a home -->
+        <a href="/home" class="btn btn-primary btn-back">Atrás</a>
+      </div>
     </div>
     
-    <button type="submit" class="btn btn-primary">Add Article</button>
-  </form>
-
-  <form (ngSubmit)="updateArticle()" *ngIf="editingArticle">
-    <h2>Edit Article</h2>
-    <div class="form-group">
-      <label>Title:</label>
-      <input type="text" class="form-control" name="title" [(ngModel)]="editingArticle.title" required>
+    <div class="col-md-10">
+      <!-- Contenido principal -->
+      <div>
+        <div class="container">
+          <!-- Formulario de agregar artículo -->
+          <div *ngIf="!editingArticle">
+            <h2>Agregar Blog</h2>
+            <form (ngSubmit)="addArticle()">
+              <div class="form-group">
+                <label>Titulo:</label>
+                <input type="text" class="form-control" name="title" [(ngModel)]="newArticle.title" required>
+              </div>
+              <div class="form-group">
+                <label>Author:</label>
+                <input type="text" class="form-control" name="author" [(ngModel)]="newArticle.author" required>
+              </div>
+              <div class="form-group">
+                <label>Contenido:</label>
+                <textarea class="form-control" name="content" [(ngModel)]="newArticle.content" required></textarea>
+              </div>
+              <div class="form-group">
+                <label>Image URL:</label>
+                <input type="text" class="form-control" name="urlImage" [(ngModel)]="newArticle.urlImage">
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Agregar Blog</button>
+            </form>
+          </div>
+    
+          <!-- Formulario de editar artículo -->
+          <div *ngIf="editingArticle">
+            <h2>Editar Blog</h2>
+            <form (ngSubmit)="updateArticle()">
+              <div class="form-group">
+                <label>Title:</label>
+                <input type="text" class="form-control" name="title" [(ngModel)]="editingArticle.title" required>
+              </div>
+              <div class="form-group">
+                <label>Author:</label>
+                <input type="text" class="form-control" name="author" [(ngModel)]="editingArticle.author" required>
+              </div>
+              <div class="form-group">
+                <label>Content:</label>
+                <textarea class="form-control" name="content" [(ngModel)]="editingArticle.content" required></textarea>
+              </div>
+              <div class="form-group">
+                <label>Image URL:</label>
+                <input type="text" class="form-control" name="urlImage" [(ngModel)]="editingArticle.urlImage">
+              </div>
+              <div class="form-group">
+                <label>Publish Date:</label>
+                <input type="date" class="form-control" name="publishDate" [(ngModel)]="editingArticle.publishDate" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Update Article</button>
+              <button type="button" class="btn btn-secondary" (click)="cancelEditing()">Cancel</button>
+            </form>
+          </div>
+    
+          <hr>
+    
+          <!-- Lista de artículos -->
+          <h2>Blogs</h2>
+          <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let article of articles">
+              <h4>{{ article.title }}</h4>
+              <p>Author: {{ article.author }}</p>
+              <p>{{ article.content }}</p>
+              <p>Publish Date: {{ article.publishDate }}</p>
+              <img *ngIf="article.urlImage" [src]="article.urlImage" class="img-fluid" alt="Article Image">
+              <button class="btn btn-danger" (click)="deleteArticle(article.id)">Eliminar</button>
+              <button class="btn btn-secondary" (click)="startEditing(article)">Editar</button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <label>Author:</label>
-      <input type="text" class="form-control" name="author" [(ngModel)]="editingArticle.author" required>
-    </div>
-    <div class="form-group">
-      <label>Content:</label>
-      <textarea class="form-control" name="content" [(ngModel)]="editingArticle.content" required></textarea>
-    </div>
-    <div class="form-group">
-      <label>Image URL:</label>
-      <input type="text" class="form-control" name="urlImage" [(ngModel)]="editingArticle.urlImage">
-    </div>
-    <div class="form-group">
-      <label>Publish Date:</label>
-      <input type="date" class="form-control" name="publishDate" [(ngModel)]="editingArticle.publishDate" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Update Article</button>
-    <button type="button" class="btn btn-secondary" (click)="cancelEditing()">Cancel</button>
-  </form>
-
-  <hr>
-
-  <h2>Articles</h2>
-  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let article of articles">
-      <h4>{{ article.title }}</h4>
-      <p>Author: {{ article.author }}</p>
-      <p>{{ article.content }}</p>
-      <p>Publish Date: {{ article.publishDate }}</p>
-      <img *ngIf="article.urlImage" [src]="article.urlImage" class="img-fluid" alt="Article Image">
-      <button class="btn btn-danger" (click)="deleteArticle(article.id)">Delete</button>
-      <button class="btn btn-secondary" (click)="startEditing(article)">Edit</button>
-    </li>
-  </ul>
+  </div>
 </div>
+
+<style>
+  /* Estilos para el menú vertical */
+  .vertical-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: #f8f9fa;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+    padding-top: 20px;
+    z-index: 1000;
+  }
+  
+  .vertical-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: #343a40;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #e9ecef;
+  }
+  
+  .vertical-menu a.active {
+    background-color: #007bff;
+    color: white;
+  }
+
+  /* Estilos para el contenido principal */
+  .col-md-10 {
+    margin-left: 220px; /* Ajusta el margen izquierdo para dar espacio al menú */
+    padding: 20px; /* Espaciado interior del contenido */
+  }
+
+  @media (max-width: 992px) {
+    .col-md-10 {
+      margin-left: 0; /* Resetear margen izquierdo en pantallas pequeñas */
+    }
+  }
+
+  /* Estilos para el botón de regreso a home */
+  .btn-back {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+  }
+</style>

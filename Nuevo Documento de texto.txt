@@ -10,4 +10,8 @@ clases de mapa  y libreria de google maps
 npm i @types/googlemaps
 
 
-ng generate service servicios/auth
+ng generate service servicios/ComentarioService/ComentarioService
+ng g c components/Comentarios
+
+ng generate service servicios/Informeserivicio/Informeserivicio
+ng g c components/Informeserivicio/InformeComponet

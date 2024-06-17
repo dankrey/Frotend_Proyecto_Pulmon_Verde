@@ -69,15 +69,15 @@
                                         <li><a href="elements.html">Elements</a></li> -->
                                     </ul>
                                 </li>
-                                <li><a routerLink="/register" >Ayuda</a>
-                                    <ul class="estilo_dropdown dropdown">
-                                        <li><a href="index.html">Mapa</a></li>
-                                        <li><a href="about-us.html">Foro Comunitario</a></li>
+                                <li><a routerLink="/informespaginaweb" >Informes</a>
+                                    <!-- <ul class="estilo_dropdown dropdown">
+                                        <! <li><a href="index.html">Mapa</a></li>
+                                        <li><a href="about-us.html">Foro Comunitario</a></li> -->
                                         <!-- <li><a href="course.html">Contacte con Nosotros</a></li> -->
                                         <!-- <li><a href="blog.html">Blog</a></li>
                                         <li><a href="contact.html">Contact</a></li>
                                         <li><a href="elements.html">Elements</a></li> -->
-                                    </ul>
+                                    <!-- </ul>  -->
                                 </li>
                                 <!-- <li><a href="#">Ayuda</a>
                                     <div class="megamenu">
@@ -112,12 +112,15 @@
                         <!-- Nav End -->
                     </div>
 
-                    <!-- Calling Info -->
-                    <div class="calling-info">
-                        <div class="call-center">
-                            <a href="tel:+654563325568889"><i class="icon-telephone-2"></i> <span>(+65) 456 332 5568 889</span></a>
-                        </div>
-                    </div>
+<!-- Calling Info -->
+<div class="calling-info">
+    <div class="call-center">
+        <a href="https://api.whatsapp.com/send?phone=573148606948" target="_blank">
+            <i class="icon-telephone-2"></i> <span>(+65) 456 332 5568 889</span>
+        </a>
+    </div>
+</div>
+
                 </nav>
             </div>
         </div>
@@ -293,60 +296,23 @@
             <div class="col-12">
                 <div class="section-heading text-center mx-auto white wow fadeInUp" data-wow-delay="300ms">
                     <span>COMENTARIOS DESTACADOS </span>
-                    <h3>Enterate lo que  comunica nuestros usuarios sobre alertas de deforestación en  los departamentos de Cundinamarca y Boyacá </h3>
+                    <h3>Entérate de lo que comunican nuestros usuarios sobre alertas de deforestación en los departamentos de Cundinamarca y Boyacá</h3>
                 </div>
             </div>
         </div>
         <div class="row">
-            <!-- Single Testimonials Area -->
-            <div class="col-12 col-md-6">
+            <div *ngFor="let comentario of comentarios" class="col-12 col-md-6">
                 <div class="single-testimonial-area mb-100 d-flex wow fadeInUp" data-wow-delay="400ms">
                     <div class="testimonial-thumb">
-                        <img src="assets/img/bg-img/t1.jpg" alt="">
+                        <img *ngIf="comentario.imageUrl; else defaultImage" [src]="comentario.imageUrl" alt="User Avatar" class="testimonial-img">
+                        <ng-template #defaultImage>
+                            <img src="assets/img/bg-img/default-avatar.png" alt="User Avatar" class="testimonial-img"> <!-- Imagen por defecto -->
+                        </ng-template>
                     </div>
                     <div class="testimonial-content">
-                        <h5>Incedio en la parte alta del  bosque </h5>
-                        <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna.</p>
-                        <h6><span>Maria Smith,</span></h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Testimonials Area -->
-            <div class="col-12 col-md-6">
-                <div class="single-testimonial-area mb-100 d-flex wow fadeInUp" data-wow-delay="500ms">
-                    <div class="testimonial-thumb">
-                        <img src="assets/img/bg-img/t2.jpg" alt="">
-                    </div>
-                    <div class="testimonial-content">
-                        <h5>Incedio en la parte baja del  bosque de boyacá </h5>
-                        <p>Retiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul.</p>
-                        <h6><span>Shawn Gaines,</span> </h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Testimonials Area -->
-            <div class="col-12 col-md-6">
-                <div class="single-testimonial-area mb-100 d-flex wow fadeInUp" data-wow-delay="600ms">
-                    <div class="testimonial-thumb">
-                        <img src="assets/img/bg-img/t3.jpg" alt="">
-                    </div>
-                    <div class="testimonial-content">
-                        <h5>Alerta de tala de aborles en Cundinamarca</h5>
-                        <p>Nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio ves tibul.</p>
-                        <h6><span>Ross Cooper,</span> </h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Testimonials Area -->
-            <div class="col-12 col-md-6">
-                <div class="single-testimonial-area mb-100 d-flex wow fadeInUp" data-wow-delay="700ms">
-                    <div class="testimonial-thumb">
-                        <img src="assets/img/bg-img/t4.jpg" alt="">
-                    </div>
-                    <div class="testimonial-content">
-                        <h5>Siembra de arboles de la empresa Camping</h5>
-                        <p>Vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibu lum est mat tis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio ves tibul. Etiam nec odio vestibulum est mat tis effic iturut magnaNec odio vestibulum est mattis effic iturut magna.</p>
-                        <h6><span>James Williams,</span></h6>
+                        <h5>{{ comentario.tittle }}</h5>
+                        <p>{{ comentario.comment }}</p>
+                        <h6><span>{{ comentario.author }},</span></h6>
                     </div>
                 </div>
             </div>
@@ -362,102 +328,38 @@
 </div>
 <!-- ##### Testimonials Area End ##### -->
 
+
+
+
 <!-- ##### Top Popular Courses Area Start ##### -->
 <div class="top-popular-courses-area section-padding-100-70">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
-                    <span>Últimos</span>
-                    <h3>Comunicados e Informes</h3>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
+            <span>Últimos</span>
+            <h3>Comunicados e Informes</h3>
+          </div>
         </div>
-        <div class="row">
-           
-            <!-- Single Top Popular Course -->
-            <div class="col-12 col-lg-6">
-                <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="400ms">
-                    <div class="popular-course-content">
-                        <h5>Lorem ipsum dolor sit amet</h5>
-                        <span>By Simon Smith   |  March 18, 2018</span>
-                        <div class="course-ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                        </div>
-                        <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod.</p>
-                        <a href="#" class="btn academy-btn btn-sm">Leer más</a>
-                    </div>
-                    <div class="popular-course-thumb bg-img" style="background-image: url(assets/img/bg-img/pc-1.jpg);"></div>
-                </div>
+      </div>
+      <div class="row">
+        <div *ngFor="let informe of informes" class="col-12 col-lg-6">
+          <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="400ms">
+            <div class="popular-course-content">
+              <h5>{{ informe.tittle }}</h5>
+              <span>By {{ informe.author }} | {{ informe.creationDate }}</span>
+              <p>{{ informe.description }}</p>
+              <a href="#" class="btn academy-btn btn-sm">Leer más</a>
             </div>
-            
-            <!-- Single Top Popular Course -->
-            <div class="col-12 col-lg-6">
-                <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="500ms">
-                    <div class="popular-course-content">
-                        <h5>Lorem ipsum dolor sit amet</h5>
-                        <span>By Simon Smith   |  March 18, 2018</span>
-                        <div class="course-ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                        </div>
-                        <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod.</p>
-                        <a href="#" class="btn academy-btn btn-sm">Leer más</a>
-                    </div>
-                    <div class="popular-course-thumb bg-img" style="background-image: url(assets/img/bg-img/pc-2.jpg);"></div>
-                </div>
-            </div>
-            
-            <!-- Single Top Popular Course -->
-            <div class="col-12 col-lg-6">
-                <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="600ms">
-                    <div class="popular-course-content">
-                        <h5>Lorem ipsum dolor sit amet</h5>
-                        <span>By Simon Smith   |  March 18, 2018</span>
-                        <div class="course-ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                        </div>
-                        <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod.</p>
-                        <a href="#" class="btn academy-btn btn-sm">Leer más</a>
-                    </div>
-                    <div class="popular-course-thumb bg-img" style="background-image: url(assets/img/bg-img/pc-3.jpg);"></div>
-                </div>
-            </div>
-            
-            <!-- Single Top Popular Course -->
-            <div class="col-12 col-lg-6">
-                <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="700ms">
-                    <div class="popular-course-content">
-                        <h5>Lorem ipsum dolor sit amet</h5>
-                        <span>By Simon Smith   |  March 18, 2018</span>
-                        <div class="course-ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                        </div>
-                        <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod.</p>
-                        <a href="#" class="btn academy-btn btn-sm">Leer más</a>
-                    </div>
-                    <div class="popular-course-thumb bg-img" style="background-image: url(assets/img/bg-img/pc-4.jpg);"></div>
-                </div>
-            </div>
+            <div class="popular-course-thumb bg-img" [style.backgroundImage]="'url(' + informe.imageUrl + ')'" ></div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<!-- ##### Top Popular Courses Area End ##### -->
+  </div>
+  <!-- ##### Top Popular Courses Area End ##### -->
+
+
 
 
 <!-- ##### Top Popular Courses 2 Area Start ##### -->
@@ -478,7 +380,7 @@
             <div class="popular-course-content">
               <h5>{{ article.title }}</h5>
               <span>By {{ article.author }} | {{ article.publishDate | date }}</span>
-              <!-- Aquí puedes considerar usar estrellas dinámicas según una propiedad de calificación del artículo si es aplicable -->
+              <!-- Aquí se peude considerar usar estrellas dinámicas según una propiedad de calificación del artículo si es aplicable -->
               <div class="course-ratings">
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
@@ -511,7 +413,7 @@
 
 
 <!-- ##### Partner Area Start ##### -->
-<div class="partner-area section-padding-0-100">
+<!-- <div class="partner-area section-padding-0-100">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -525,7 +427,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- ##### Partner Area End ##### -->
 
 

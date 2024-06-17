@@ -9,8 +9,9 @@ import { RegisterComponent } from './shared/register/register.component';
 import { MapaComponent } from './shared/mapa/mapa.component';
 import { HomeUsuarioComponent } from './shared/home-usuario/home-usuario.component';
 import { BlogusuarioComponent } from './components/blogusuario/blogusuario.component';
-
-
+import { ComentariosComponent } from './servicios/ComentarioService/components/comentarios/comentarios.component';
+import { InformeComponetComponent } from './components/Informeserivicio/informe-componet/informe-componet.component';
+import { InformesComponent } from './shared/informes/informes.component';
 
 const routes: Routes = [{path:'',redirectTo: 'home',  pathMatch: 'full'},
   {path:'home',component:HomeComponent},
@@ -22,6 +23,9 @@ const routes: Routes = [{path:'',redirectTo: 'home',  pathMatch: 'full'},
   {path:'Mapa',component:MapaComponent},
   {path:'homeUsuario',component:HomeUsuarioComponent},
   {path:'blogUsuario',component: BlogusuarioComponent},
+  {path:'comentarios',component: ComentariosComponent},
+  {path:'informes',component: InformeComponetComponent},
+  {path:'informespaginaweb',component: InformesComponent},
 
  
 ];

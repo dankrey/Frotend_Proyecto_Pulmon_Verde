@@ -1,0 +1,145 @@
+.container {
+  max-width: 900px; /* Aumentar el ancho máximo del contenedor principal */
+  margin: 20px auto; /* Ajustar el margen para centrar el contenido */
+}
+
+.form-group {
+  margin-bottom: 1.5em; /* Aumentar el espacio entre grupos de formulario */
+}
+
+button {
+  margin-right: 1em; /* Incrementar el espacio entre botones */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin-bottom: 1.5em; /* Incrementar el espacio entre elementos de lista */
+}
+
+/* Estilos para el menú vertical */
+.vertical-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  background-color: #f8f9fa;
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+  padding-top: 20px;
+  z-index: 1000;
+}
+
+.vertical-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: #343a40;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.vertical-menu a:hover {
+  background-color: #e9ecef;
+}
+
+.vertical-menu a.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Estilos para el contenido principal */
+.col-md-10 {
+  margin-left: 220px; /* Ajusta el margen izquierdo para dar espacio al menú */
+  padding: 20px; /* Espaciado interior del contenido */
+}
+
+@media (max-width: 992px) {
+  .col-md-10 {
+    margin-left: 0; /* Resetear margen izquierdo en pantallas pequeñas */
+  }
+}
+
+/* Estilos para el botón de regreso a home */
+.btn-back {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+}
+
+/* Estilos para el formulario de informes */
+.inform-form {
+  margin-top: 30px; /* Incrementar el margen superior */
+  padding: 30px; /* Aumentar el espacio interno del formulario */
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.inform-form .form-group {
+  margin-bottom: 20px; /* Aumentar el espacio entre grupos de formulario */
+}
+
+.inform-form button {
+  margin-top: 15px; /* Incrementar el espacio superior de los botones */
+}
+
+/* Estilos para la lista de informes */
+.inform-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.inform-item {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.inform-item h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.inform-item p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.inform-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los botones de acción en la lista de informes */
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px; /* Aumentar el tamaño de los botones */
+  margin-right: 8px;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px; /* Aumentar el tamaño de los botones */
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 16px; /* Aumentar el tamaño de los botones */
+}
