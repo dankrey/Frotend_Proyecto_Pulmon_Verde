@@ -24,9 +24,21 @@
                                <input name="txtSearch" class="search-inline--input" placeholder="Buscar">
                             </div>
                           </div>
-                          <div class="login-content">
+                          <div class="login-content" *ngIf="!isLoggedIn">
                             <a href="/login" routerLinkActive="active-link">Registrar / Login</a>
-                        </div>
+                          </div>
+                          
+                          <div class="user-content" *ngIf="isLoggedIn">
+                            <span>{{ userName }}</span>
+                            <div class="user-menu">
+                              <i class="fa fa-user"></i>
+                              <ul>
+                                <li><a href="/profile">Editar perfil</a></li>
+                                <li><a href="#" (click)="logout()">Cerrar sesión</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          
                         
                         
                     </div>

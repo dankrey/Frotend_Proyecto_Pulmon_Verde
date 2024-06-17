@@ -23,7 +23,7 @@ export class InformesComponent implements OnInit {
         this.informes = data; // Asigna los datos de los informes obtenidos del servicio
       },
       (error) => {
-        console.error('Error loading informes', error);
+        console.error('Error al cargar los informes', error);
       }
     );
   }

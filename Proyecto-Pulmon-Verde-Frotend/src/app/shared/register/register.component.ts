@@ -19,12 +19,12 @@ export class RegisterComponent {
       .register({ username: this.username, password: this.password })
       .subscribe(
         (response) => {
-          console.log('Registration successful', response);
+          console.log('Registraccion exitosa.', response);
           // Redirige a la página de login después del registro exitoso
           this.router.navigate(['/login']);
         },
         (error) => {
-          console.error('Registration failed', error);
+          console.error('Fallo de Registro.', error);
         }
       );
   }
