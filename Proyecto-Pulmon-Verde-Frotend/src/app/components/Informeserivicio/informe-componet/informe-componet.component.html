@@ -33,7 +33,17 @@
             <label for="imageUrl">URL de Imagen</label>
             <input id="imageUrl" type="text" formControlName="imageUrl" class="form-control" required>
           </div>
-          <button type="submit" class="btn btn-primary">{{ isEditing ? 'Actualizar' : 'Agregar' }}</button>
+          <!-- <button type="submit" class="btn btn-primary">{{ isEditing ? 'Actualizar' : 'Agregar' }}</button> -->
+          <button type="submit" class="button">
+            <span class="button__text">{{ isEditing ? 'Actualizar' : 'Agregar' }}</span>
+            <span class="button__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg">
+                <line y2="19" y1="5" x2="12" x1="12"></line>
+                <line y2="12" y1="12" x2="19" x1="5"></line>
+              </svg>
+            </span>
+          </button>
+          
           <button type="button" class="btn btn-secondary" *ngIf="isEditing" (click)="cancelEdit()">Cancelar</button>
         </form>
       
